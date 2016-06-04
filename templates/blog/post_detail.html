@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% load staticfiles %}
+	<figure class="portada">
+		<img src="{{ post.portada.url }}" alt="">
+	</figure>
+	<div>
+		<h3>{{ post.title }}</h3>
+		<p>{{ post.date|timesince }}</p>
+		<p>hace {{ post.content|safe }}</p>
+	</div>
+{% endblock content %}

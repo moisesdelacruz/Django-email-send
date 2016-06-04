@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static "css/normalize.css" %}">
+		<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+		<link rel="stylesheet" href="{% static "css/index.css" %}">
+	</head>
+	<body>
+		<header>
+			<nav role="navigation" class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">Email</a>
+        </div>
+ 
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="{% url 'home:home' %}">Inicio</a></li>
+            <li><a href="{% url 'blog:home' %}">Blog</a></li>
+            {% if request.user.is_staff %}
+	            <li><a href="{% url 'home:admin' %}">Admin</a></li>
+            {% endif %}
+            <li><a href="/contact">Contacto</a></li>
+            <li><a href="/about">Acerca de</a></li>
+            {% if request.user.is_authenticated %}
+	            <li><a href="#">{{ request.user.username }}</a></li>
+	            <li><a href="{% url 'home:logout' %}">Logout</a></li>
+	           {% else %}
+	            <li><a href="{% url 'home:login' %}">Login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+			</nav>
+		</header>
+		<section>
+			{% block content %}
+			    
+			{% endblock content %}
+		</section>
+		<footer>
+			{% block footer %}
+			    
+			{% endblock footer %}
+		</footer>
+		<script src="{% static "js/ckeditor/ckeditor.js" %}"></script>
+		<script src="{% static "js/jquery-2.2.4.min.js" %}"></script>
+		<script src="{% static "js/bootstrap.min.js" %}"></script>
+		<script src="{% static "js/index.js" %}"></script>
+</body>
+</html>

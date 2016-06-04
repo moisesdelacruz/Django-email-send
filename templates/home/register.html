@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="login">
+		<div class="form">
+			<h1>Registrate</h1>
+			{% if message %}
+			<b>{{message}}</b>
+			{% endif %}
+			<form action="" method="POST">{% csrf_token %}
+				<p>
+					<label for="id_username">Nombre de usuario:</label>
+					<input id="id_username" maxlength="30" name="username" type="text" placeholder="Nombre de usuario">
+					<span class="helptext">Requerido. 30 caracteres o menos. Letras, dígitos y @/./+/-/_ solamente.</span>
+				</p>
+				<p>
+					<label for="id_password1">Contraseña:</label>
+					<input id="id_password1" name="password1" type="password" placeholder="Contraseña">
+				</p>
+				<p>
+					<label for="id_password2">Contraseña (confirmación):</label>
+					<input id="id_password2" name="password2" type="password" placeholder="Contraseña (confirmación)">
+					<span class="helptext">Para verificar, ingrese la misma contraseña anterior.</span>
+				</p>
+				<input type="submit" value="Guardar">
+			</form>
+			<p>ya tienes una cuenta <a href="{% url 'home:login' %}" role="button">Inicia seción</a></p>
+		</div>
+	</div>
+
+	
+{% endblock content %}

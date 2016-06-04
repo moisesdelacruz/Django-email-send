@@ -28,16 +28,26 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+from django.core.exceptions import ImproperlyConfigured    
+
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.home',
+    'apps.blog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social.apps.django_app.default',
+    'djrill',
 ]
+
+ROOT_URLCONF = 'emailSend.urls'
+
+WSGI_APPLICATION = 'emailSend.wsgi.application'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,7 +65,9 @@ ROOT_URLCONF = 'emailSend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,9 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-ve'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Caracas'
 
 USE_I18N = True
 
@@ -118,4 +130,51 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = 'media'
+
+MEDIA_URL = '/media/'
+
+LOGIN_URL = '/login/'
+
+# Python Social Auth
+
+## Twitter
+SOCIAL_AUTH_TWITTER_KEY = '6sjpjIk0pDNaD54oiHXMIqe2l'
+SOCIAL_AUTH_TWITTER_SECRET = 'q6Fop5CqCbCJ5cM5P6dKyQMGMWFbPEnr1E8gsVwzrPrSs9Tg6E'
+
+## Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = '585455641616660'
+SOCIAL_AUTH_FACEBOOK_SECRET = '05ebe660d3778f3ae780b07dcd31d6c7'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+# Backends
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# URLs
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_URL = '/login/'
+
+
+# Configuracion para envios de emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.live.com'
+
+EMAIL_HOST_USER = 'moises-jesus_15@hotmail.com'
+
+EMAIL_HOST_PASSWORD = 'SelenaandDemi'
+
+EMAIL_PORT = 25 or 465

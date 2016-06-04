@@ -1,0 +1,136 @@
+section {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 1000px;
+}
+
+.post {
+	color: black;
+	display: inline-block;
+	margin: .5em;
+	text-decoration: none;
+}
+
+.post:hover {
+	text-decoration: none;
+}
+
+.post div {
+	background: #F8F8F8;
+	min-height: 280px;
+	padding: .5em;
+	position: relative;
+	width: 280px;
+}
+
+.post div .image img {
+	width: 265px;
+	height: 88px;
+}
+
+.post div .title {
+	color: white;
+	left: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	text-shadow: 1px 1px 5px black;
+	top: 1em;
+}
+
+.post div .content {
+	text-align: justify;
+}
+
+.post div .date {
+	color: grey;
+	font-size: 14px;
+	text-align: right;
+}
+/*
+	detalles del post
+*/
+
+.portada img {
+	width: 1000px;
+}
+
+/*
+*
+* Estilos de la aplicacion home
+*
+*/
+.login {
+	background: rgba(128, 128, 128, 0.42);
+	overflow: hidden;
+	padding: 1em;
+}
+
+h4,
+h3,
+h1 {
+	text-align: center;
+}
+
+section h1,
+section h2,
+section h3,
+section h4 {
+	text-align: justify;;
+}
+
+.form {
+	margin: 3em auto;
+	width: 350px;
+}
+
+.form p {
+	display: inline-block;
+	text-align: center;
+	width: 300px;
+}
+
+.form form {
+	margin: 0 auto;
+	width: 300px;
+}
+
+p label {
+	display: none;
+}
+
+input {
+	width: 300px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.27);
+  font-size: 1.2em;
+  height: 50px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+input[type="submit"] {
+	background: #F8F8F8;
+	color: black;
+	float: right;
+	padding: .5em;
+}
+
+a.btn {
+	display: block;
+  margin-top: .5em;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.formEmail {
+	margin: 0 auto;
+	width: 300px;
+}
+
+label[for="id_title"],
+label[for="id_description"],
+label[for="id_content"],
+label[for="id_portada"] {
+	display: block;
+}

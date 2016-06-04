@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="login">
+		<div class="form">
+			<h1>Login</h1>
+			{% if message %}
+			<b>{{message}}</b>
+			{% endif %}
+			<form action="" method="post">{% csrf_token %}
+				<p>
+					<label for="id_username">Nombre de usuario:</label>
+					<input id="id_username" maxlength="254" name="username" type="text" placeholder="Nombre de usuario">
+				</p>
+				<p>
+					<label for="id_password">Contraseña:</label>
+					<input id="id_password" name="password" type="password" placeholder="Contraseña">
+				</p>
+				<input type="submit" value="Iniciar Secion" />
+			</form>
+			<p>no tienes una cuenta <a href="{% url 'home:register' %}" role="button">Registrate</a></p>
+		</div>
+		<h3>Inicia seción con tus redes sociales</h3>
+		<a href="{% url 'social:begin' 'twitter' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}" class="btn btn-info btn-lg" role="button">Twitter</a>
+		<a href="{% url 'social:begin' 'facebook' %}{% if request.GET.next %}?next={{request.GET.next}}{% endif %}" class="btn btn-primary btn-lg" role="button">Facebook</a>
+	</div>
+{% endblock content %}

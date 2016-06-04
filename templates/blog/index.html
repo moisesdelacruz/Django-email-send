@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h2>Blogs</h2>
+	{% for post in posts %}
+		<a href="{% url 'blog:post' post.id %}" class="post">
+			<div>
+				<figure class="image">
+					<img src="{{ post.portada.url }}" alt="{{ post.title }}">
+				</figure>
+				<h3 class="title">{{ post.title }}</h3>
+				<p class="content">{{ post.description }}</p>
+				<p class="date">hace {{ post.date|timesince }}</p>
+			</div>
+		</a>
+	{% endfor %}
+{% endblock content %}
+
+{% block footer %}
+  <div class="login">
+  	<h4>Quieres enterarte cuando Email publica un nuevo post?</h4>
+  	<h4 id="message">Suscribete!</h4>
+  	<form method="POST" class="formEmail" id="subscribe" action="{% url 'blog:subscribe' %}">
+  		{% csrf_token %}
+			<p>
+				<label for="id_name">Name:</label>
+				<input id="id_name" maxlength="60" name="name" type="text" placeholder="Name" />
+			</p>
+			<p>
+				<label for="id_email">Email:</label>
+				<input id="id_email" maxlength="254" name="email" type="email" placeholder="Email" />
+			</p>
+			<input type="submit" value="Suscribirse" />
+  	</form>
+  </div>
+{% endblock footer %}
