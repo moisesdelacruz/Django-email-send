@@ -1,8 +1,3 @@
-if (window.location.pathname === "/blog/new/") {
-	CKEDITOR.replace ( 'id_content' )
-	CKEDITOR.config.height = 500
-}
-
 $('#subscribe').on('submit', (e) => {
 	e.preventDefault()
 	var $form = $('#subscribe')

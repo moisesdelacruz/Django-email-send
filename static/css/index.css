@@ -2,6 +2,7 @@ section {
 	margin: 0 auto;
 	overflow: hidden;
 	width: 1000px;
+	padding-bottom: 5em;
 }
 
 .post {
@@ -90,9 +91,18 @@ section h4 {
 	width: 300px;
 }
 
+
 .form form {
 	margin: 0 auto;
 	width: 300px;
+}
+
+.form-image {
+	width: 20em;
+}
+
+#id_portada {
+	display: none;
 }
 
 p label {
@@ -133,4 +143,70 @@ label[for="id_description"],
 label[for="id_content"],
 label[for="id_portada"] {
 	display: block;
+}
+
+/* Admin View */
+
+article.post-item {
+	border: 1px solid grey;
+	border-radius: 5px;
+	background: #F8F8F8;
+	padding: .5em;
+	margin-top: .5em;
+	position: relative;
+}
+
+article.post-item:hover {
+	box-shadow: 2px 2px 20px grey;
+}
+
+.inline-block.post-options {
+    float: right;
+}
+
+p.inline-block.post-item {
+    margin-right: 5em;
+    position: absolute;
+    right: 5em;
+}
+
+.inline-block {
+	display: inline-block;
+	margin: 0;
+}
+
+.options-panel {
+	text-align: center;
+}
+
+.options-panel li {
+	display: inline-block;
+	list-style: none;
+}
+
+.options-panel li:nth-child(even) {
+	margin-left: 3em;
+}
+
+.confirm {
+	width: auto;
+	padding: 3em;
+}
+
+p.confirm-text {
+	display: block;
+  text-align: center;
+  width: auto;;
+  margin: 2em;
+  font-size: 18px;
+}
+
+a.confirm-decline {
+	padding: 1em;
+	display: inline-block;
+}
+
+input.confirm-confirm {
+	background: #478e3c;
+	color: white;
 }

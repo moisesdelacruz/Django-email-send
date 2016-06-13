@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-from django.core.exceptions import ImproperlyConfigured    
+from django.core.exceptions import ImproperlyConfigured
 
 # Application definition
 
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
-    'djrill',
 ]
 
 ROOT_URLCONF = 'emailSend.urls'
@@ -145,12 +144,12 @@ LOGIN_URL = '/login/'
 # Python Social Auth
 
 ## Twitter
-SOCIAL_AUTH_TWITTER_KEY = '6sjpjIk0pDNaD54oiHXMIqe2l'
-SOCIAL_AUTH_TWITTER_SECRET = 'q6Fop5CqCbCJ5cM5P6dKyQMGMWFbPEnr1E8gsVwzrPrSs9Tg6E'
+SOCIAL_AUTH_TWITTER_KEY = '' # Your Key of Twitter
+SOCIAL_AUTH_TWITTER_SECRET = '' # Your Secret of Twitter
 
 ## Facebook
-SOCIAL_AUTH_FACEBOOK_KEY = '585455641616660'
-SOCIAL_AUTH_FACEBOOK_SECRET = '05ebe660d3778f3ae780b07dcd31d6c7'
+SOCIAL_AUTH_FACEBOOK_KEY = '' # Your key of Facebook
+SOCIAL_AUTH_FACEBOOK_SECRET = '' # Your Secret of Facebook
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 # Backends
@@ -171,10 +170,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_USE_TLS = True
 
-EMAIL_HOST = 'smtp.live.com'
+EMAIL_HOST = 'smtp.live.com' # change live for gmail in case of gmail.com
 
-EMAIL_HOST_USER = 'moises-jesus_15@hotmail.com'
+EMAIL_HOST_USER = 'example@hotmail.com' # Eamil
 
-EMAIL_HOST_PASSWORD = 'SelenaandDemi'
+EMAIL_HOST_PASSWORD = 'password' # Password
 
-EMAIL_PORT = 25 or 465
+EMAIL_PORT = 25 or 465 # Confing port

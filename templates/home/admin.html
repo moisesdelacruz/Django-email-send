@@ -1,8 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<ul>
+	<ul class="options-panel">
 		<li><a href="/admin" class="btn btn-default">Panel de administracion</a></li>
 		<li><a href="{% url 'blog:new_post' %}" class="btn btn-default">Publicar nuevo post</a></li>
 	</ul>
+
+	<section>
+		{% for post in posts %}
+			<article class="post-item">
+				<p class="inline-block post-title">{{ post.title }}</p>
+				<p class="inline-block post-item">{{ post.date }}</p>
+				<div class="inline-block post-options">
+					<a href="{% url 'blog:post' post.pk %}">View</a>
+					<a href="{% url 'home:update' post.pk %}">Edit</a>
+					<a href="{% url 'home:delete' post.pk %}">Delete</a>
+				</div>
+			</article>
+		{% endfor %}
+	</section>
 {% endblock content %}

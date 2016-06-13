@@ -6,21 +6,35 @@
 	    	{% csrf_token %}
 				<p>
 					<label for="id_title">Title:</label>
-					<input id="id_title" maxlength="150" name="title" type="text" placeholder="Title" />
+					<input id="id_title" maxlength="150" name="title" type="text" placeholder="Title" value="{{ post.title }}" />
 				</p>
 				<p>
 					<label for="id_description">Description:</label>
-					<textarea cols="40" id="id_description" maxlength="200" name="description" rows="10" placeholder="Description"></textarea>
+					<textarea cols="40" id="id_description" maxlength="200" name="description" rows="10" placeholder="Description">{{ post.description }}</textarea>
 				</p>
 				<p>
-					<label for="id_portada">Portada:</label>
-					<input id="id_portada" name="portada" type="file">
+					<label for="id_portada">Portada:
+            {% if post.portada %}
+              <img class="form-image" src="{{ post.portada.url }}" alt="">
+      			{% else %}
+              <img class="form-image" src="http://parapvillagemarkets.com.au/images/stories/AustraliaPost_logo_CMYK_1.gif" alt="">
+      			{% endif %}
+          </label>
+
+					<input id="id_portada" name="portada" type="file" />
 				</p>
 				<p>
 					<label for="id_content">Content:</label>
-					<textarea cols="40" id="id_content" name="content" rows="10"></textarea>
+					<textarea cols="40" id="id_content" name="content" rows="10">{{ post.content|safe }}</textarea>
 				</p>
+        <a href="{% url 'home:admin' %}" class="btn btn-danger confirm-decline">Cancelar<a/>
 				<input class="btn btn-info btn-lg" type="submit" value="Guardar" />
 	    </form>
     </div>
+    {% load staticfiles %}
+    <script src="{% static "js/ckeditor/ckeditor.js" %}"></script>
+    <script type="text/javascript">
+      CKEDITOR.replace ( 'id_content' )
+      CKEDITOR.config.height = 500
+    </script>
 {% endblock content %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form action="" method="post" class="form login confirm">{% csrf_token %}
+    <p class="confirm-text">Are you sure you want to delete "{{ object }}"?</p>
+    <a href="{% url 'home:admin' %}" class="btn btn-danger confirm-decline">Decline<a/>
+    <input class="confirm-confirm" type="submit" name="submit" value="Confirm" />
+  </form>
+{% endblock content %}

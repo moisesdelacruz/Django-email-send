@@ -82,8 +82,8 @@ def sendEmail(request):
 
 	msg_html = render_to_string('plantilla.html', {'title': request.POST['title'], 'description': request.POST['description']})
 	send_mail(
-		'Se a publicado un nuevo post en Radio Universal',
-		'Se a publicado un nuevo porno',
+		'Se a publicado un nuevo post en EmailSend',
+		'Se a publicado un nuevo en EmailSend',
 		settings.EMAIL_HOST_USER,
 		emailsList,
 		html_message=msg_html,
