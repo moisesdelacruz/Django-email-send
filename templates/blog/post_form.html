@@ -15,9 +15,9 @@
 				<p>
 					<label for="id_portada">Portada:
             {% if post.portada %}
-              <img class="form-image" src="{{ post.portada.url }}" alt="">
+              <img class="form-image" id="photo" src="{{ post.portada.url }}" alt="">
       			{% else %}
-              <img class="form-image" src="http://parapvillagemarkets.com.au/images/stories/AustraliaPost_logo_CMYK_1.gif" alt="">
+              <img class="form-image" id="photo" src="http://parapvillagemarkets.com.au/images/stories/AustraliaPost_logo_CMYK_1.gif" alt="">
       			{% endif %}
           </label>
 

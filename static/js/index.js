@@ -1,3 +1,6 @@
+var portada = document.getElementById('id_portada')
+if ( portada !== null ) portada.addEventListener('change', changePhoto)
+
 $('#subscribe').on('submit', (e) => {
 	e.preventDefault()
 	var $form = $('#subscribe')
@@ -13,3 +16,9 @@ $('#subscribe').on('submit', (e) => {
     }
   });
 })
+
+function changePhoto (e) {
+	var photo = document.getElementById('photo')
+	var file = e.target.files[0]
+	photo.src = window.URL.createObjectURL(file)
+}

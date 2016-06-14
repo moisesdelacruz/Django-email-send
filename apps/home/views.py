@@ -22,7 +22,7 @@ class HomeTemplateView(TemplateView):
 	template_name = 'home/index.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(HomeView, self).get_context_data(**kwargs)
+		context = super(HomeTemplateView, self).get_context_data(**kwargs)
 		context['var'] = 'Hello World'
 		return context
 
