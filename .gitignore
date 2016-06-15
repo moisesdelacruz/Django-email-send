@@ -3,4 +3,4 @@
 *.py-tpl
 /db.sqlite3
 migrations
-media
+/media
