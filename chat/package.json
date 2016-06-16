@@ -1,0 +1,28 @@
+{
+  "name": "chat-node",
+  "version": "1.0.0",
+  "description": "chat of proof",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moisesdelacruz/Django-email-send.git"
+  },
+  "author": "Moises De La Cruz <moisesdelacruz17@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moisesdelacruz/Django-email-send/issues"
+  },
+  "homepage": "https://github.com/moisesdelacruz/Django-email-send#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "log": "^1.4.0",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}

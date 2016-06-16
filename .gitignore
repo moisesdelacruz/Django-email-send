@@ -1,6 +1,9 @@
 *.db
 *.pyc
 *.py-tpl
-/db.sqlite3
+db.sqlite3
 migrations
-/media
+media
+
+node_modules
+*.log

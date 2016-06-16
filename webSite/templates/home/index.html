@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Welcome To Email</h1>
+  <section>
+    <div id="chat">
+      <div id="messages"></div>
+      <form id="send-message">
+        <textarea id="text-message" name="message" title="Send message" rows="8" cols="40" placeholder="Write your message" alt="message"></textarea>
+        <input id="submit" type="submit" value="Enviar">
+      </form>
+    </div>
+  </section>
+{% endblock content %}

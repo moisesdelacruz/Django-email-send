@@ -1,7 +1,7 @@
 section {
 	margin: 0 auto;
 	overflow: hidden;
-	width: 1000px;
+	max-width: 1000px;
 	padding-bottom: 5em;
 }
 
@@ -209,4 +209,50 @@ a.confirm-decline {
 input.confirm-confirm {
 	background: #478e3c;
 	color: white;
+}
+
+
+/* Chat */
+
+div#chat {
+	height: 600px;
+	width: 100%;
+}
+
+div#messages {
+	background: rgba(239, 239, 239, 0.27);
+	height: calc(100% - 70px);
+	padding: 1em;
+	overflow-y: auto;
+}
+
+div.message-yo {
+	background: rgba(14, 177, 232, 0.17);
+	padding: .5em;
+	margin-bottom: 1em;
+}
+
+div.message-other {
+	background: rgba(14, 177, 232, 0.37);
+	padding: .5em;
+	margin-bottom: 1em;
+}
+
+input#submit {
+	width: calc(20% - .5em);
+	background: rgba(35, 184, 222, 0.55);
+	color: white;
+}
+
+textarea#text-message {
+	width: 80%;
+	height: 50px;
+	resize: none;
+	padding: 1em;
+}
+
+form#send-message {
+	padding: .5em;
+	border-top: 1px solid rgba(128, 128, 128, 0.41);
+	background: #F8F8F8;
 }
