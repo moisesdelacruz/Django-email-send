@@ -1,9 +1,6 @@
-# Django-email-send
-A practice test application for sending email and class based views
+### Instalations and run
 
 ``` sh
-$ git clone https://github.com/moisesdelacruz/Django-email-send.git
-
 $ cd Django-email-send/
 
 $ pip install -r requirements.txt
