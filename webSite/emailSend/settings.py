@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r9^usl_&ri7uf^_%@=t7idzjve4-!bx2gef$q4+hce0+5f$ql('
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -146,12 +146,12 @@ LOGIN_URL = '/login/'
 # Python Social Auth
 
 ## Twitter
-SOCIAL_AUTH_TWITTER_KEY = '' # Your Key of Twitter
-SOCIAL_AUTH_TWITTER_SECRET = '' # Your Secret of Twitter
+SOCIAL_AUTH_TWITTER_KEY = os.getenv('SOCIAL_AUTH_TWITTER_KEY') # Your Key of Twitter
+SOCIAL_AUTH_TWITTER_SECRET = os.getenv('SOCIAL_AUTH_TWITTER_SECRET') # Your Secret of Twitter
 
 ## Facebook
-SOCIAL_AUTH_FACEBOOK_KEY = '' # Your key of Facebook
-SOCIAL_AUTH_FACEBOOK_SECRET = '' # Your Secret of Facebook
+SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY') # Your key of Facebook
+SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET') # Your Secret of Facebook
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 # Backends

@@ -1,14 +1,80 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Welcome To Email</h1>
-  <section>
     <div id="chat">
-      <div id="messages"></div>
-      <form id="send-message">
-        <textarea id="text-message" name="message" title="Send message" rows="8" cols="40" placeholder="Write your message" alt="message"></textarea>
-        <input id="submit" type="submit" value="Enviar">
-      </form>
+      <div class="users">
+        <div class="me-user">
+          <figure class="photo-profile">
+            <img alt="photo" src="/static/image/Avril_Lavigne_2013.jpg" height="30px" width="30px" title="photo" />
+          </figure>
+          {% if request.user.is_authenticated %}
+            <p id="username">{{ request.user.username }}</p>
+          {% else %}
+            <p id="username">anonimo</p>
+          {% endif %}
+        </div>
+        <div class="other-user">
+          <div class="user">
+            <figure class="photo-profile">
+              <img alt="photo" src="/static/image/demi-lovato-624x351.jpg" height="30px" width="30px" title="photo" />
+            </figure>
+            <p>Username</p>
+          </div>
+
+          <div class="user">
+            <figure class="photo-profile">
+              <img alt="photo" src="/static/image/descarga.jpg" height="30px" width="30px" title="photo" />
+            </figure>
+            <p>Username</p>
+          </div>
+
+          <div class="user">
+            <figure class="photo-profile">
+              <img alt="photo" src="/static/image/descarga.jpg" height="30px" width="30px" title="photo" />
+            </figure>
+            <p>Username</p>
+          </div>
+        </div>
+      </div>
+      <div class="body">
+        <div id="messages"></div>
+        <form id="send-message">
+          <div class="content-emojis">
+            <div>
+              <img alt="smiley" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/regular_smile.png" style="height:23px; width:23px" title="smiley" />
+            </div>
+            <div>
+              <img alt="sad" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/sad_smile.png" style="height:23px; width:23px" title="sad" />
+            </div>
+            <div>
+              <img alt="crying" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/cry_smile.png" style="height:23px; width:23px" title="crying" />
+            </div>
+            <div>
+              <img alt="wink" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/wink_smile.png" style="height:23px; width:23px" title="wink" />
+            </div>
+            <div>
+              <img alt="frown" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/confused_smile.png" style="height:23px; width:23px" title="frown" />
+            </div>
+            <div>
+              <img alt="surprise" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/omg_smile.png" style="height:23px; width:23px" title="surprise" />
+            </div>
+            <div>
+              <img alt="heart" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/heart.png" style="height:23px; width:23px" title="heart" />
+            </div>
+            <div>
+              <img alt="mail" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/envelope.png" style="height:23px; width:23px" title="mail" />
+            </div>
+            <div>
+              <img alt="yes" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/thumbs_up.png" style="height:23px; width:23px" title="yes" />
+            </div>
+            <div>
+              <img alt="no" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/thumbs_down.png" style="height:23px; width:23px" title="no" />
+            </div>
+          </div>
+          <button class="button-emojis" type="button" name="button"><img alt="smiley" src="http://localhost:8000/static/js/ckeditor/plugins/smiley/images/regular_smile.png" style="height:30px; width:30px" title="smiley" /></button>
+          <textarea id="text-message" name="message" title="Send message" rows="8" cols="40" placeholder="Write your message" alt="message"></textarea>
+          <input id="submit" type="submit" value="Enviar">
+        </form>
+      </div>
     </div>
-  </section>
 {% endblock content %}

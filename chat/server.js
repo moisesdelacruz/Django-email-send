@@ -21,8 +21,10 @@ app.get('/', (req, res) => {
 io.sockets.on('connection', function(socket){
     socket.join('chat');
 
+    console.log(socket.id);
+
     socket.on('message', function(message){
-        socket.broadcast.to('chat').emit('message',{chat:message.text});
+        socket.broadcast.to('chat').emit('message', { message: message.text, username: message.username } );
     });
 });
 
