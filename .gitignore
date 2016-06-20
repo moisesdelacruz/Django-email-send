@@ -7,3 +7,5 @@ media
 
 node_modules
 *.log
+
+gunicorn_start
