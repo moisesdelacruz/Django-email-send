@@ -96,7 +96,7 @@ function formatMessage (message) {
 }
 
 if (window.location.pathname === "/") {
-	var socket = io.connect("http://200.7.98.41:8002/")
+	var socket = io.connect("http://localhost:3000/")
 	var contentMessages = document.getElementById('messages')
 	var chat = document.getElementById('send-message')
 	chat.addEventListener('submit', sendMessage)
