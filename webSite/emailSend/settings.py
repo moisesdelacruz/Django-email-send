@@ -178,8 +178,8 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST = 'smtp.live.com' # change live for gmail in case of gmail.com
 
-EMAIL_HOST_USER = 'example@hotmail.com' # Eamil
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') # Eamil
 
-EMAIL_HOST_PASSWORD = 'password' # Password
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') # Password
 
 EMAIL_PORT = 25 or 465 # Confing port
