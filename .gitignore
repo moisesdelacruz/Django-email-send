@@ -1,9 +1,11 @@
 *.db
 *.pyc
 *.py-tpl
-/webSite/db.sqlite3
+*.sqlite3
 migrations
 media
 
 node_modules
 *.log
+
+gunicorn_start
