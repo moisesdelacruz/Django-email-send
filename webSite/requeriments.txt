@@ -1,7 +1,9 @@
 Django==1.9.6
+django-braces==1.9.0
 djrill==2.1.0
 oauthlib==1.1.2
 Pillow==3.2.0
+psycopg2==2.6.1
 PyJWT==1.4.0
 python-openid==2.2.5
 python-social-auth==0.2.19
