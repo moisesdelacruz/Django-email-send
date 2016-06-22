@@ -6,6 +6,10 @@ section {
 	padding-bottom: 5em;
 }
 
+nav {
+	z-index: 6;
+}
+
 .post {
 	color: black;
 	display: inline-block;
@@ -251,11 +255,25 @@ div.exit {
   cursor: pointer;
 }
 
-input#submit {
-	width: calc(20% - .5em);
+button#submit {
+	width: calc(20% - .3em);
 	background: rgba(35, 184, 222, 0.55);
 	color: white;
 	border: none;
+	font-size: 2.8em;
+  padding: .2em;
+  position: absolute;
+  right: .2em;
+  bottom: .35em;
+	height: 50px;
+}
+
+button#submit:before {
+	font-family: 'icomoon';
+	content: "\e90a";
+	transform: rotate(-23deg);
+	display: block;
+	margin-top: -.4em;
 }
 
 textarea#text-message {
