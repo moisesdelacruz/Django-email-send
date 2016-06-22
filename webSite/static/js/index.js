@@ -18,6 +18,14 @@ $('#subscribe').on('submit', (e) => {
   })
 })
 
+// START SHOW END HIDE /U/S/E/R/S/ START //
+$('.users-connect').on('click', (e) => {
+	$('.users').css('left', '0')
+})
+
+$('.close-menu').on('click', (e) => {
+	$('.users').css('left', '-100%')
+})
 // START EMOJIS /E/M/O/J/I/S START //
 // Emojis show and hide
 function showEmojis (e) {
