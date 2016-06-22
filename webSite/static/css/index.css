@@ -259,11 +259,12 @@ input#submit {
 }
 
 textarea#text-message {
-	width: 80%;
+	width: calc(80% - 1.8em);
 	height: 50px;
 	resize: none;
 	padding: 1em;
 	border: none;
+	margin-left: 1.8em;
 }
 
 form#send-message {
@@ -307,12 +308,14 @@ div.body {
 }
 
 div.users {
-  position: absolute;
+	position: absolute;
   left: 0;
-	width: 30%;
+  width: 30%;
   height: 100%;
   background: #eaf5f9;
   padding: 1em;
+  min-width: 200px;
+  z-index: 6;
 }
 
 div.users div.user {
@@ -344,4 +347,58 @@ figure.photo-profile img {
 	width: 100%;
 	height: 100%;
 	border-radius: 50px;
+}
+
+
+span.users-connect {
+	display: none;
+	position: absolute;
+  font-size: 2.3em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: .5em 0;
+  color: #00c1ff;
+	cursor: pointer;
+}
+
+span.close-menu {
+	display: none;
+	float: right;
+  font-size: 1.5em;
+	cursor: pointer;
+}
+
+/* Responsive Designe */
+@media screen and (max-width: 768px) {
+	div.users {
+		left: -100%;
+	}
+
+	div.body {
+		width: 100%;
+	}
+
+	span.users-connect {
+		display: block;
+	}
+
+	span.close-menu {
+		display: block;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	textarea#text-message {
+		margin-left: 0;
+		width: 80%;
+	}
+
+	div.users {
+		left: 0;
+	}
+
+	div.body {
+		width: 70%;
+	}
 }
